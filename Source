@@ -1,0 +1,41 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Leafploits", "GrapeTheme")
+ 
+-- MAIN
+local Main = Window:NewTab("Credits")
+local MainSection = Main:NewSection("Credits")
+ 
+--Local Player
+local Player = Window:NewTab("Main")
+local PlayerSection = Player:NewSection("Main")
+ 
+PlayerSection:NewSlider("Walkspeed", "SPEED!!", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+ 
+PlayerSection:NewSlider("Jumppower", "JUMP!!", 350, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+ 
+local PlayerSection = Player:NewSection("Scripts")
+ 
+PlayerSection:NewButton("Infinite Yield", "FE Admin Commands", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+ 
+PlayerSection:NewButton("Chat Spoofer", "Lets you chat for other people", function()
+    loadstring(game:HttpGet(('https://pastebin.com/raw/djBfk8Li'),true))()
+end)
+ 
+PlayerSection:NewButton("Bypassed Fly", "Lets you fly around", function()
+    loadstring(game:HttpGet(('http://raw.githubusercontent.com/Nicuse/RobloxScripts/main/BypassedFly.lua'))()
+ 
+    Fly(true)
+end)
+ 
+local PlayerSection = Player:NewSection("Config")
+ 
+PlayerSection:NewButton("Reset Configs", "Resets all configurations.", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
